@@ -15,7 +15,7 @@ model Brand {
   id String   @id @default(uuid())
   name String
   country String
-  founded_in DateTime
+  founded_in String
   headquarter String
   website String
   created_at DateTime @default(now())
@@ -35,7 +35,7 @@ model Model {
   engine String
   fuel_type String
   performance String
-  year DateTime
+  year String
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
   deleted_at DateTime?

@@ -1,11 +1,11 @@
 import { Prisma, Brand } from '@prisma/client';
-import prisma from '../../utils/prisma';
+import prisma from '../../../utils/prisma';
 
 interface IRequest {
-    id: string
+    id?: string
     name: string
     country: string
-    founded_in: Date
+    founded_in: string
     headquarter: string
     website: string
 }
