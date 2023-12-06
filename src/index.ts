@@ -4,7 +4,7 @@ import cors from 'cors';
 import 'reflect-metadata';
 import AppError from './error/appError';
 import { Router } from 'express';
-import brandRouter from './modules/brand/router/brand.routes';
+import brandRouter from './modules/BrandEntity/router/brand.routes';
 
 
 const port = process.env.PORT || 9000;
