@@ -5,6 +5,8 @@ import 'reflect-metadata';
 import AppError from './error/appError';
 import { Router } from 'express';
 import brandRouter from './modules/BrandEntity/router/brand.routes';
+import modelRouter from './modules/ModelEntity/router/model.routes';
+import versionRouter from './modules/VersionEntity/router/Version.routes';
 
 
 const port = process.env.PORT || 9000;
@@ -20,10 +22,13 @@ app.use(cors({
 
 const routes = Router();
 routes.use('/brand', brandRouter);
+routes.use('/model', modelRouter);
+routes.use('/version', versionRouter);
 app.use(routes);
 
 app.use((error: Error, request: Request, response: Response, next: NextFunction) => {
-    if (error instanceof AppError) {
+  console.log('aqui!');  
+  if (error instanceof AppError) {
       return response.status(error.statusCode).json({
         status: "error",
         message: error.message
