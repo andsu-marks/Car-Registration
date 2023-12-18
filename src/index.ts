@@ -27,7 +27,6 @@ routes.use('/version', versionRouter);
 app.use(routes);
 
 app.use((error: Error, request: Request, response: Response, next: NextFunction) => {
-  console.log('aqui!');  
   if (error instanceof AppError) {
       return response.status(error.statusCode).json({
         status: "error",

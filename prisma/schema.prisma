@@ -15,7 +15,7 @@ model Brand {
   id String   @id @default(uuid())
   name String
   country String
-  founded_in String
+  year String
   headquarter String
   website String
   created_at DateTime @default(now())
@@ -34,7 +34,6 @@ model Model {
   type String
   engine String
   fuel_type String
-  performance String
   year String
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
@@ -53,6 +52,7 @@ model Version {
   name String
   price String
   features String
+  performance String
 
   model Model @relation(fields: [model_id], references: [id])
   model_id String

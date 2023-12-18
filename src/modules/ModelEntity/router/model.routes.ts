@@ -13,7 +13,6 @@ celebrate({
         type: Joi.string().required(),
         engine: Joi.string().required(),
         fuel_type: Joi.string().required(),
-        performance: Joi.string().required(),
         year: Joi.string().required(),
         brand_id: Joi.string().required().uuid(),
     }
@@ -32,7 +31,6 @@ celebrate({
     type: Joi.string().required(),
     engine: Joi.string().required(),
     fuel_type: Joi.string().required(),
-    performance: Joi.string().required(),
     year: Joi.string().required(),
     brand_id: Joi.string().required().uuid(),
   }

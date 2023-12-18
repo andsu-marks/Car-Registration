@@ -5,7 +5,7 @@ interface IRequest {
     id?: string
     name: string
     country: string
-    founded_in: string
+    year: string
     headquarter: string
     website: string
 }
@@ -17,7 +17,7 @@ export class BrandRepository {
                 id: data.id,
                 name: data.name,
                 country: data.country,
-                founded_in: data.founded_in,
+                year: data.year,
                 headquarter: data.headquarter,
                 website: data.website
             }

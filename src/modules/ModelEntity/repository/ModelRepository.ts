@@ -8,13 +8,11 @@ interface IRequest {
     type: string;
     engine: string;
     fuel_type: string;
-    performance: string;
     year: string;
     brand_id: string
 }
 
 export class ModelRepository {
-
     async create(data: IRequest) {
         const createModel = await prisma.model.create({
             data: {
@@ -23,7 +21,6 @@ export class ModelRepository {
                 type: data.type,
                 engine: data.engine,
                 fuel_type: data.fuel_type,
-                performance: data.performance,
                 year: data.year,
 
                 // brand_id: data.brand_id
@@ -33,11 +30,8 @@ export class ModelRepository {
                         id: data.brand_id
                     }
                 }
-
-
             }
         })
-
         return createModel;
     }
 

@@ -4,7 +4,7 @@ import { Brand} from "@prisma/client";
 interface IRequest {
     name: string
     country: string
-    founded_in: string
+    year: string
     headquarter: string
     website: string
 }
@@ -17,7 +17,7 @@ export default class CreateBrandService {
         const brand = await brandRepository.create({
             name: data.name,
             country: data.country,
-            founded_in: data.founded_in,
+            year: data.year,
             headquarter: data.headquarter,
             website: data.website
         })

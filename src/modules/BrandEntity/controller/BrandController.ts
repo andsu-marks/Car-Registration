@@ -4,7 +4,7 @@ import ListBrandService from "../service/ListBrandService";
 import UpdateBrandService from "../service/UpdateBrandService";
 import DeleteBrandService from "../service/DeleteBrandService";
 
-export class BrandController {
+export default class BrandController {
     public async create(request: Request, response: Response): Promise<Response> {
         const createBrand = new CreateBrandService();
         const { ...data } = request.body;

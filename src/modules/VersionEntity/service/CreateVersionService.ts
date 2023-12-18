@@ -5,6 +5,7 @@ interface IRequest {
     name: string
     price: string
     features: string
+    performance: string
     model_id: string
 }
 
@@ -15,6 +16,7 @@ export default class CreateVersionService {
             name: data.name,
             price: data.price,
             features: data.features,
+            performance: data.performance,
             model_id: data.model_id
         })
         await versionRepository.save(version);

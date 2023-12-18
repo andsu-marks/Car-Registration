@@ -6,6 +6,7 @@ interface IRequest {
     name: string
     price: string
     features: string
+    performance: string
     model_id: string
 }
 
@@ -17,6 +18,7 @@ export class VersionRepository {
                 name: data.name,
                 price: data.price,
                 features: data.features,
+                performance: data.performance,
                 model: {
                     connect: {
                         id: data.model_id

@@ -11,6 +11,7 @@ celebrate({
         name: Joi.string().required(),
         price: Joi.string().required(),
         features: Joi.string().required(),
+        performance: Joi.string().required(),
         model_id: Joi.string().required().uuid()
     }
 }), versionController.create)
@@ -26,6 +27,7 @@ celebrate({
         name: Joi.string().required(),
         price: Joi.string().required(),
         features: Joi.string().required(),
+        performance: Joi.string().required(),
         model_id: Joi.string().required().uuid(),
     }
 }), versionController.update)

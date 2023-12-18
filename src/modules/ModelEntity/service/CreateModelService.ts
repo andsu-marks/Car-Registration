@@ -7,7 +7,6 @@ interface IRequest {
     type: string
     engine: string
     fuel_type: string
-    performance: string
     year: string
     brand_id: string
 }
@@ -23,7 +22,6 @@ export default class CreateBrandService {
             type: data.type,
             engine: data.engine,
             fuel_type: data.fuel_type,
-            performance: data.performance,
             year: data.year,
             brand_id: data.brand_id
         })

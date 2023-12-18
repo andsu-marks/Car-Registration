@@ -1,6 +1,6 @@
 import { celebrate, Joi, Segments } from "celebrate";
 import { Router } from "express";
-import { BrandController } from "../controller/BrandController";
+import BrandController from "../controller/BrandController"
 
 const brandRouter = Router();
 const brandController = new BrandController();
@@ -10,7 +10,7 @@ celebrate({
   [Segments.BODY]: {
     name: Joi.string().required(),
     country: Joi.string().required(),
-    founded_in: Joi.string().required(),
+    year: Joi.string().required(),
     headquarter: Joi.string().required(),
     website: Joi.string().required()
   }
@@ -26,7 +26,7 @@ celebrate({
   [Segments.BODY]: {
     name: Joi.string(),
     country: Joi.string(),
-    founded_in: Joi.string(),
+    year: Joi.string(),
     headquarter: Joi.string(),
     website: Joi.string()
   }
