@@ -1,4 +1,4 @@
-import { BrandRepository } from "../repository/BrandRepository";
+import { BrandRepository } from "@repository/BrandRepository";
 import { Brand} from "@prisma/client";
 
 interface IRequest {
@@ -12,7 +12,6 @@ interface IRequest {
 export default class CreateBrandService {
     async execute(data: IRequest): Promise<Brand> {
         const brandRepository = new BrandRepository();
-        // const brandExist = await brandRepository.find();
 
         const brand = await brandRepository.create({
             name: data.name,

@@ -1,4 +1,4 @@
-import { BrandRepository } from "../repository/BrandRepository";
+import { BrandRepository } from "@repository/BrandRepository";
 
 export default class ListBrandService {
   async execute() {

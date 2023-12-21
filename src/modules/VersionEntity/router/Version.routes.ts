@@ -1,6 +1,6 @@
 import { celebrate, Joi, Segments } from "celebrate";
 import { Router } from "express";
-import { VersionController } from "../controller/VersionController";
+import { VersionController } from "@/controller/VersionController";
 
 const versionRouter = Router();
 const versionController = new VersionController();

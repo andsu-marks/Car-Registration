@@ -1,7 +1,7 @@
-import express, { NextFunction, Request, Response }  from 'express';
+import 'reflect-metadata';
+import express, { NextFunction, Request, Response } from 'express'
 import 'dotenv/config';
 import cors from 'cors';
-import 'reflect-metadata';
 import AppError from './error/appError';
 import { Router } from 'express';
 import brandRouter from './modules/BrandEntity/router/brand.routes';
@@ -28,6 +28,7 @@ app.use(routes);
 
 app.use((error: Error, request: Request, response: Response, next: NextFunction) => {
   if (error instanceof AppError) {
+    console.log(response)
       return response.status(error.statusCode).json({
         status: "error",
         message: error.message

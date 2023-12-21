@@ -1,8 +1,8 @@
 import { Response, Request } from "express";
-import CreateVersionService from "../service/CreateVersionService";
-import ListVersionService from "../service/ListVersionService";
-import UpdateVersionService from "../service/UpdateVersionService";
-import DeleteVersionService from "../service/DeleteVersionService";
+import CreateVersionService from "@service/CreateVersionService";
+import ListVersionService from "@service/ListVersionService";
+import UpdateVersionService from "@service/UpdateVersionService";
+import DeleteVersionService from "@service/DeleteVersionService";
 
 export class VersionController {
     public async create(request: Request, response: Response): Promise<Response> {
@@ -39,6 +39,6 @@ export class VersionController {
         const { id } = request.params
         const deleteVersion = new DeleteVersionService();
         await deleteVersion.execute(id)
-        return response.json([])
+        return response.status(204).send();      
       }
 }

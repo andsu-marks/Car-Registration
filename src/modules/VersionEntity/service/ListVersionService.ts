@@ -1,4 +1,4 @@
-import { VersionRepository } from "../repository/VersionRepository";
+import { VersionRepository } from "@repository/VersionRepository";
 
 export default class ListVersionService {
     async execute() {

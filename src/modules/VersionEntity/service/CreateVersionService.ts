@@ -1,5 +1,5 @@
 import { Version } from "@prisma/client"
-import { VersionRepository } from "../repository/VersionRepository"
+import { VersionRepository } from "@repository/VersionRepository";
 
 interface IRequest {
     name: string

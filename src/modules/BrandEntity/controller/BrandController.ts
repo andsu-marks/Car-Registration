@@ -1,8 +1,8 @@
 import { Response, Request } from "express";
-import CreateBrandService from "../service/CreateBrandService";
-import ListBrandService from "../service/ListBrandService";
-import UpdateBrandService from "../service/UpdateBrandService";
-import DeleteBrandService from "../service/DeleteBrandService";
+import CreateBrandService from "@service/CreateBrandService";
+import ListBrandService from "@service/ListBrandService";
+import UpdateBrandService from "@service/UpdateBrandService";
+import DeleteBrandService from "@service/DeleteBrandService";
 
 export default class BrandController {
     public async create(request: Request, response: Response): Promise<Response> {
@@ -12,7 +12,6 @@ export default class BrandController {
         const user = await createBrand.execute({
           ...data
         })
-        console.log("Sucesso!");
         return response.json(user);
     }
     
@@ -40,6 +39,6 @@ export default class BrandController {
       const { id } = request.params
       const deleteBrand = new DeleteBrandService();
       await deleteBrand.execute(id)
-      return response.json([])
+      return response.status(204).send();    
     }
 }

@@ -1,5 +1,5 @@
-import { Prisma, Version } from "@prisma/client"
-import prisma from "../../../utils/prisma"
+import { Prisma, Version } from "@prisma/client";
+import prisma from "@utils/prisma";
 
 interface IRequest {
     id?: string

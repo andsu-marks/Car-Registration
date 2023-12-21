@@ -1,4 +1,4 @@
-import { ModelRepository } from "../repository/ModelRepository";
+import { ModelRepository } from "@repository/ModelRepository";
 
 export default class ListModelService {
   async execute() {

@@ -1,8 +1,8 @@
 import { Response, Request } from "express";
-import CreateModelService from "../service/CreateModelService";
-import ListModelService from "../service/ListModelService";
-import UpdateModelService from "../../ModelEntity/service/UpdateModelService";
-import DeleteModelService from "../service/DeleteModelService";
+import CreateModelService from "@service/CreateModelService";
+import ListModelService from "@service/ListModelService";
+import UpdateModelService from "@service/UpdateModelService";
+import DeleteModelService from "@service/DeleteModelService";
 
 export class ModelController {
     public async create(request: Request, response: Response): Promise<Response> {
@@ -39,6 +39,6 @@ export class ModelController {
       const { id } = request.params
       const deleteModel = new DeleteModelService();
       await deleteModel.execute(id)
-      return response.json([])
+      return response.status(204).send();
     }
 }

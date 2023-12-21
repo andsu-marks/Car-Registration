@@ -1,5 +1,5 @@
 import { Model, Prisma } from "@prisma/client";
-import prisma from "../../../utils/prisma";
+import prisma from "@utils/prisma";
 
 interface IRequest {
     id?: string;
@@ -22,9 +22,6 @@ export class ModelRepository {
                 engine: data.engine,
                 fuel_type: data.fuel_type,
                 year: data.year,
-
-                // brand_id: data.brand_id
-
                 brand: {
                     connect: {
                         id: data.brand_id
