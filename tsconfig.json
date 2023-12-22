@@ -6,7 +6,6 @@
     "allowJs": true,
     "rootDir": ".",
     "outDir": "./dist/lib",
-    // "declarationDir": "./dist/@types",
     "declaration": true,
     "removeComments": true,
     "esModuleInterop": true,
@@ -16,21 +15,8 @@
     "baseUrl": "./",
     "paths": {
       "@utils/*": [ "./src/utils/*" ],
-      "@/controller/*": [
-        "./src/modules/BrandEntity/controller/*",
-        "./src/modules/ModelEntity/controller/*",
-        "./src/modules/VersionEntity/controller/*"
-      ],
-      "@repository/*": [ 
-        "./src/modules/BrandEntity/repository/*",
-        "./src/modules/ModelEntity/repository/*",
-        "./src/modules/VersionEntity/repository/*"
-      ],
-      "@service/*": [ 
-        "./src/modules/BrandEntity/service/*",
-        "./src/modules/ModelEntity/service/*",
-        "./src/modules/VersionEntity/service/*" 
-      ]
+      "@modules/*": [ "./src/modules/*" ],
+      "@error/*": [ "./src/error/*" ]
     }
   },
   "include": ["src/**/*", "**/*.spec.ts"]

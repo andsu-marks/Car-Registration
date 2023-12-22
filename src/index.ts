@@ -2,11 +2,11 @@ import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express'
 import 'dotenv/config';
 import cors from 'cors';
-import AppError from './error/appError';
+import AppError from '@error/appError';
 import { Router } from 'express';
-import brandRouter from './modules/BrandEntity/router/brand.routes';
-import modelRouter from './modules/ModelEntity/router/model.routes';
-import versionRouter from './modules/VersionEntity/router/Version.routes';
+import brandRouter from '@modules/BrandEntity/routes/brand.routes';
+import modelRouter from '@modules/ModelEntity/routes/model.routes';
+import versionRouter from '@modules/VersionEntity/routes/Version.routes';
 
 
 const port = process.env.PORT || 9000;
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use(cors({
-    origin: ['http://localhost:9000']
+    origin: [`http://localhost:${port}`]
 }));
 
 const routes = Router();
