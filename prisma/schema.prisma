@@ -12,10 +12,10 @@ datasource db {
 
 
 model Brand {
-  id Int @id @default(autoincrement())
+  id String   @id @default(uuid())
   name String
   country String
-  founded_in DateTime
+  year Int
   headquarter String
   website String
   created_at DateTime @default(now())
@@ -28,20 +28,19 @@ model Brand {
 }
 
 model Model {
-  id Int @id @default(autoincrement())
+  id String   @id @default(uuid())
   name String
   base_price String
   type String
   engine String
   fuel_type String
-  performance String
-  year DateTime
+  year Int
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
   deleted_at DateTime?
 
   brand Brand @relation(fields: [brand_id], references: [id])
-  brand_id Int
+  brand_id String
 
   version Version[]
 
@@ -49,13 +48,12 @@ model Model {
 }
 
 model Version {
-  id Int @id @default(autoincrement())
+  id String   @id @default(uuid())
   name String
   price String
-  features String
 
   model Model @relation(fields: [model_id], references: [id])
-  model_id Int
+  model_id String
 
   @@map("version")
 }
