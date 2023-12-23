@@ -1,11 +1,11 @@
 import { Prisma, Brand } from '@prisma/client';
-import prisma from '../../utils/prisma';
+import prisma from '@utils/prisma';
 
 interface IRequest {
-    id: string
+    id?: string
     name: string
     country: string
-    founded_in: Date
+    year: number
     headquarter: string
     website: string
 }
@@ -17,7 +17,7 @@ export class BrandRepository {
                 id: data.id,
                 name: data.name,
                 country: data.country,
-                founded_in: data.founded_in,
+                year: data.year,
                 headquarter: data.headquarter,
                 website: data.website
             }
