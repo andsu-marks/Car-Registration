@@ -24,7 +24,7 @@ model Brand {
 
   Model Model[]
 
-  @@map("brand")
+  @@map("brands")
 }
 
 model Model {
@@ -44,7 +44,7 @@ model Model {
 
   version Version[]
 
-  @@map("model")
+  @@map("models")
 }
 
 model Version {
@@ -55,5 +55,5 @@ model Version {
   model Model @relation(fields: [model_id], references: [id])
   model_id String
 
-  @@map("version")
+  @@map("versions")
 }
